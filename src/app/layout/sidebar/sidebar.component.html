@@ -1,0 +1,97 @@
+<!-- Sidebar Component with Nested Items for CS SENSE -->
+<!-- <div class="sidebar-wrapper"
+     [ngClass]="{ 
+       'collapsed': isCollapsed, 
+       'hovered': isCollapsed && isHovered 
+     }"
+     (mouseenter)="onSidebarEnter()"
+     (mouseleave)="onSidebarLeave()"> -->
+<div class="sidebar-wrapper"
+     [ngClass]="{
+       'collapsed': isCollapsed,
+       'hovered': isCollapsed && isHovered
+     }"
+     >
+     <!-- (mouseenter)="onSidebarEnter()"
+     (mouseleave)="onSidebarLeave()" -->
+
+
+  <div class="sidebar-header d-flex align-items-center justify-content-between px-4 py-2 border-bottom">
+    <div class="d-flex align-items-center">
+        <div style="background: #9333ea;" class="p-2 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thermometer h-6 w-6 text-white" data-lov-id="src/components/Sidebar.tsx:31:12" data-lov-name="Thermometer" data-component-path="src/components/Sidebar.tsx" data-component-line="31" data-component-file="Sidebar.tsx" data-component-name="Thermometer" data-component-content="%7B%22className%22%3A%22h-6%20w-6%20text-white%22%7D"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"></path></svg>
+        </div>
+      <!-- <img src="assets/images/logo-icon.png" class="logo-icon me-2" alt="logo" width="30" height="30" /> -->
+      <div class="d-flex flex-column ps-2">
+        <h6 class="logo-text fw-bold mb-0 small" *ngIf="!isCollapsed || isHovered">CS SENSE</h6>
+        <small class="text-muted" *ngIf="!isCollapsed || isHovered">Temperature Monitor</small>
+      </div>
+    </div>
+    <div class="toggle-icon">
+      <i class="bx bx-arrow-to-left fs-6" (click)="toggleSidebar()" style="cursor: pointer;"></i>
+    </div>
+  </div>
+
+  <!-- Sidebar Content -->
+  <div class="sidebar-content pt-2 overflow-auto" style="height: calc(100vh - 60px);">
+    <ul class="navigation list-unstyled">
+
+      <li class="nav-item px-2 py-0" [ngClass]="{ 'active-item': router.url === '/dashboard' }">
+        <a routerLink="/dashboard" routerLinkActive="active" class="d-flex align-items-center text-decoration-none py-3 px-4">
+          <div class="icon-box bg-gradient-primary"><i class="bi bi-speedometer2"></i></div>
+          <span class="menu-text fw-semibold ms-3 small" *ngIf="!isCollapsed || isHovered">Dashboard</span>
+        </a>
+      </li>
+
+      <li class="nav-item px-2 py-0" [ngClass]="{ 'active-item': router.url === '/profile' }">
+        <a routerLink="/profile" routerLinkActive="active" class="d-flex align-items-center text-decoration-none py-3 px-4">
+          <div class="icon-box bg-gradient-success"><i class="bi bi-person-circle"></i></div>
+          <span class="menu-text fw-semibold ms-3 small" *ngIf="!isCollapsed || isHovered">Profile</span>
+        </a>
+      </li>
+
+      <li class="nav-item px-2 py-0 d-none">
+  <div class="d-flex align-items-center justify-content-between" (click)="toggleDropdown('myprofile')" style="cursor: pointer;">
+    <div class="d-flex align-items-center w-100">
+      <div class="icon-box bg-gradient-dark">
+        <i class="bi bi-shield-lock"></i>
+      </div>
+      <span class="menu-text fw-semibold ms-3" *ngIf="!isCollapsed || isHovered">My Profile</span>
+    </div>
+    <i *ngIf="!isCollapsed || isHovered" class="bi ms-2"
+       [ngClass]="isExpanded('myprofile') ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+  </div>
+  <ul class="submenu ps-5 list-unstyled ms-1" *ngIf="isExpanded('myprofile')">
+    <li class="py-1">
+      <a routerLink="/profile" routerLinkActive="active" class="text-decoration-none small d-block">Profile</a>
+    </li>
+    <li class="py-1">
+      <a routerLink="/change-password" routerLinkActive="active" class="text-decoration-none small d-block">Change Password</a>
+    </li>
+  </ul>
+</li>
+
+
+      <li class="nav-item px-2 py-0" [ngClass]="{ 'active-item': router.url === '/device-config' }">
+        <a routerLink="/device-config" routerLinkActive="active" class="d-flex align-items-center text-decoration-none py-3 px-4">
+          <div class="icon-box bg-gradient-info"><i class="bi bi-gear"></i></div>
+          <span class="menu-text fw-semibold ms-3 small" *ngIf="!isCollapsed || isHovered">Device Config</span>
+        </a>
+      </li>
+
+      <li class="nav-item px-2 py-0" [ngClass]="{ 'active-item': router.url === '/asset-list' }">
+        <a routerLink="/asset-list" routerLinkActive="active" class="d-flex align-items-center text-decoration-none py-3 px-4">
+          <div class="icon-box bg-gradient-warning"><i class="bi bi-box"></i></div>
+          <span class="menu-text fw-semibold ms-3 small" *ngIf="!isCollapsed || isHovered">Asset List</span>
+        </a>
+      </li>
+
+      <li class="nav-item px-2 py-0" [ngClass]="{ 'active-item': router.url === '/alerts' }">
+        <a routerLink="/alerts" routerLinkActive="active" class="d-flex align-items-center text-decoration-none py-3 px-4">
+          <div class="icon-box bg-gradient-danger"><i class="bi bi-exclamation-triangle"></i></div>
+          <span class="menu-text fw-semibold ms-3 small" *ngIf="!isCollapsed || isHovered">Alerts</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

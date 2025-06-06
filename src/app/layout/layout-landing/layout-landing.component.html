@@ -1,0 +1,83 @@
+<!-- <div
+  id="wrapper"
+  [ngClass]="{
+    'sidebar-collapsed': isCollapsed,
+    'sidebar-hovered': isHovered,
+    'sidebar-open': isMobileOpen
+  }"
+  (click)="isMobileOpen && closeSidebar()"
+>
+  <app-sidebar
+    (mouseenter)="onSidebarEnter()"
+    (mouseleave)="onSidebarLeave()"
+    [isCollapsed]="isCollapsed"
+    [isHovered]="isHovered"
+  ></app-sidebar>
+
+  <div class="content-wrapper">
+    <app-header
+      [isMobileOpen]="isMobileOpen"
+      (toggleSidebar)="toggleSidebar()"
+    ></app-header>
+
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
+
+  <div id="sidebar-backdrop" *ngIf="isMobileOpen" (click)="closeSidebar()"></div>
+</div> -->
+
+
+<!-- <div id="wrapper"
+     [class.sidebar-collapsed]="!isMobileOpen && isCollapsed"
+     [class.sidebar-hovered]="!isMobileOpen && isCollapsed && isHovered"
+     [class.sidebar-open]="isMobileOpen"
+     (mouseenter)="onSidebarEnter()"
+     (mouseleave)="onSidebarLeave()">
+<app-sidebar
+  [isCollapsed]="isCollapsed"
+  [isHovered]="isHovered"
+  [isMobileOpen]="isMobileOpen">
+</app-sidebar>
+
+
+  <div id="sidebar-backdrop" *ngIf="isMobileOpen" (click)="closeSidebar()"></div>
+
+
+  <div class="main-content-wrapper">
+    <app-header (toggleSidebar)="toggleSidebar()" [isMobileOpen]="isMobileOpen"></app-header>
+    <main class="flex-grow-1">
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>
+  </div>
+</div> -->
+
+
+
+<div id="wrapper"
+     [class.sidebar-collapsed]="!isMobileOpen && isCollapsed"
+     [class.sidebar-hovered]="!isMobileOpen && isCollapsed && isHovered"
+     [class.sidebar-open]="isMobileOpen"
+     (mouseenter)="onSidebarEnter()"
+     (mouseleave)="onSidebarLeave()">
+
+  <!-- Sidebar -->
+  <app-sidebar
+    [isCollapsed]="isCollapsed"
+    [isHovered]="isHovered"
+    [isMobileOpen]="isMobileOpen">
+  </app-sidebar>
+
+  <!-- Backdrop for Mobile -->
+  <div id="sidebar-backdrop" *ngIf="isMobileOpen" (click)="closeSidebar()"></div>
+
+  <!-- Main Content -->
+  <div class="main-content-wrapper">
+    <app-header (toggleSidebar)="toggleSidebar()" [isMobileOpen]="isMobileOpen"></app-header>
+    <main class="flex-grow-1 p-4">
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>
+  </div>
+</div>

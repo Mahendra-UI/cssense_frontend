@@ -1,0 +1,10 @@
+.pcoded-navbar {
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: 991px) {
+    transform: translateX(-260px);
+    &.mob-open {
+      transform: translateX(0);
+    }
+  }
+}

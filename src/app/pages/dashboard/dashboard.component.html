@@ -1,0 +1,152 @@
+<!-- Dashboard Layout with Refined Styling -->
+<div class="dashboard-wrapper p-4">
+  <h2 class="dashboard-title">CS SENSE Temperature Monitoring System</h2>
+  <p class="dashboard-subtitle">Real-time temperature monitoring and analytics dashboard</p>
+
+  <!-- Stats Cards -->
+  <div class="row g-4 mt-4">
+    <div class="col-md-3">
+      <div class="stat-card gradient-card blue">
+        <div class="card-icon">
+          <i class="bi bi-cpu"></i>
+        </div>
+        <div>
+          <h4 class="stat-value">24</h4>
+          <p class="stat-note">+2 from yesterday</p>
+          <p class="stat-label">Active Devices</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card gradient-card green">
+        <div class="card-icon">
+          <i class="bi bi-thermometer-half"></i>
+        </div>
+        <div>
+          <h4 class="stat-value">48</h4>
+          <p class="stat-note">All operational</p>
+          <p class="stat-label">Temperature Sensors</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card gradient-card red">
+        <div class="card-icon">
+          <i class="bi bi-bell"></i>
+        </div>
+        <div>
+          <h4 class="stat-value">3</h4>
+          <p class="stat-note">2 critical</p>
+          <p class="stat-label">Active Alerts</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card gradient-card purple">
+        <div class="card-icon">
+          <i class="bi bi-people"></i>
+        </div>
+        <div>
+          <h4 class="stat-value">12</h4>
+          <p class="stat-note">+5 from last hour</p>
+          <p class="stat-label">Users Online</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Graph Section -->
+  <div class="mt-5">
+    <h5 class="section-heading">Temperature Trends</h5>
+    <p class="section-subtext">24-hour temperature monitoring</p>
+    <div class="chart-placeholder">[Graph Component]</div>
+  </div>
+</div>
+
+<style>
+.dashboard-wrapper {
+  background: #f6f9ff;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.dashboard-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #3b40e0;
+}
+
+.dashboard-subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.2rem 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.gradient-card.blue .card-icon { background: linear-gradient(135deg, #56CCF2, #2F80ED); }
+.gradient-card.green .card-icon { background: linear-gradient(135deg, #42e695, #3bb2b8); }
+.gradient-card.red .card-icon { background: linear-gradient(135deg, #f953c6, #b91d73); }
+.gradient-card.purple .card-icon { background: linear-gradient(135deg, #667eea, #764ba2); }
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.stat-note {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.section-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c2c54;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtext {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.chart-placeholder {
+  height: 250px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-style: italic;
+}
+</style>
